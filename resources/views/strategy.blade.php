@@ -81,12 +81,10 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    GoF Patterns
+                    Pattern Strategy
                 </div>
 
-                <div class="links">
-                    <a href="{{ route('strategy') }}">Strategy</a>
-                </div>
+
             </div>
         </div>
     </body>

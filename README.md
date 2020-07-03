@@ -29,3 +29,6 @@
 01. docker-compose exec app php artisan tinker - запускаем tinker для проверки работоспособности БД
 02. \DB::table('migrations')->get(); - выводит все строки в табилце
 03. exit - выходим 
+
+## About the GoF patterns
+
