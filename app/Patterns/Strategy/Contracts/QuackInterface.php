@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: myskind
+ * User: MyskinD
  * Date: 04.07.20
  * Time: 10:43
  */
@@ -9,10 +9,10 @@
 namespace App\Patterns\Strategy\Contracts;
 
 
-interface QuackBehaviorInterface
+interface QuackInterface
 {
     /**
-     * @return mixed
+     * @return string
      */
-    public function quack();
+    public function quack(): string;
 }

@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: myskind
+ * User: MyskinD
  * Date: 04.07.20
  * Time: 10:37
  */
@@ -9,23 +9,23 @@
 namespace App\Patterns\Strategy;
 
 
-use App\Patterns\Strategy\Contracts\FlyBehaviorInterface;
-use App\Patterns\Strategy\Contracts\QuackBehaviorInterface;
+use App\Patterns\Strategy\Contracts\FlyInterface;
+use App\Patterns\Strategy\Contracts\QuackInterface;
 
 abstract class Duck
 {
-    /** @var FlyBehaviorInterface  */
+    /** @var FlyInterface  */
     protected $flyBehavior;
 
-    /** @var QuackBehaviorInterface  */
+    /** @var QuackInterface  */
     protected $quackBehavior;
 
     /**
      * Duck constructor.
-     * @param FlyBehaviorInterface $flyBehavior
-     * @param QuackBehaviorInterface $quackBehavior
+     * @param FlyInterface $flyBehavior
+     * @param QuackInterface $quackBehavior
      */
-    public function __construct(FlyBehaviorInterface $flyBehavior, QuackBehaviorInterface $quackBehavior)
+    public function __construct(FlyInterface $flyBehavior, QuackInterface $quackBehavior)
     {
         $this->flyBehavior = $flyBehavior;
         $this->quackBehavior = $quackBehavior;
@@ -34,20 +34,45 @@ abstract class Duck
     /**
      * @return mixed
      */
-    public abstract function display();
+    public abstract function display(): string;
 
-    public function performFly()
+    /**
+     * @return string
+     */
+    public function performFly(): string
     {
-        $this->flyBehavior->fly();
+        return $this->flyBehavior->fly();
     }
 
-    public function performQuack()
+    /**
+     * @return string
+     */
+    public function performQuack(): string
     {
-        $this->quackBehavior->quack();
+        return $this->quackBehavior->quack();
     }
 
-    public function swim()
+    /**
+     * @return string
+     */
+    public function swim(): string
     {
-        echo 'All ducks float, even decoys!';
+        return 'All ducks float, even decoys!';
+    }
+
+    /**
+     * @param FlyInterface $fb
+     */
+    public function setFlyBehavior(FlyInterface $fb)
+    {
+        $this->flyBehavior = $fb;
+    }
+
+    /**
+     * @param QuackInterface $qb
+     */
+    public function setQuackBehavior(QuackInterface $qb)
+    {
+        $this->quackBehavior = $qb;
     }
 }

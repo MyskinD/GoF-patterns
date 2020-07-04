@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: myskind
+ * User: MyskinD
  * Date: 04.07.20
  * Time: 10:39
  */
@@ -9,10 +9,10 @@
 namespace App\Patterns\Strategy\Contracts;
 
 
-interface FlyBehaviorInterface
+interface FlyInterface
 {
     /**
-     * @return mixed
+     * @return string
      */
-    public function fly();
+    public function fly(): string ;
 }

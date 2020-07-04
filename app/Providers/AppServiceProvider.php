@@ -14,13 +14,18 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            \App\Patterns\Strategy\Contracts\FlyBehaviorInterface::class,
-            \App\Patterns\Strategy\Duck::class
+            \App\Patterns\Strategy\Contracts\FlyInterface::class,
+            \App\Patterns\Strategy\MallardDuck::class
         );
 
         $this->app->bind(
-            \App\Patterns\Strategy\Contracts\QuackBehaviorInterface::class,
-            \App\Patterns\Strategy\Duck::class
+            \App\Patterns\Strategy\Contracts\QuackInterface::class,
+            \App\Patterns\Strategy\MallardDuck::class
+        );
+
+        $this->app->bind(
+            \App\Patterns\Strategy\MallardDuck::class,
+            \App\Patterns\Strategy\Services\MiniDuckService::class
         );
     }
 

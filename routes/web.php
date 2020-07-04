@@ -18,3 +18,4 @@ Route::get('/', function () {
 });
 
 Route::get('/strategy', ['as' => 'strategy', 'uses' => 'StrategyController@main']);
+
