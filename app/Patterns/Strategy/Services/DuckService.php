@@ -2,23 +2,28 @@
 /**
  * Created by PhpStorm.
  * User: MyskinD
- * Date: 05.07.20
- * Time: 1:23
+ * Date: 04.07.20
+ * Time: 22:02
  */
 
 namespace App\Patterns\Strategy\Services;
 
 
 use App\Patterns\Strategy\Contracts\FlyInterface;
-use App\Patterns\Strategy\ModelDuck;
+use App\Patterns\Strategy\Duck;
 
-class ModelDuckService
+class DuckService
 {
-    protected $model;
+    /** @var Duck  */
+    protected $duck;
 
-    public function __construct(ModelDuck $model)
+    /**
+     * MallardDuckService constructor.
+     * @param Duck $duck
+     */
+    public function __construct(Duck $duck)
     {
-        $this->model = $model;
+        $this->duck = $duck;
     }
 
     /**
@@ -26,7 +31,7 @@ class ModelDuckService
      */
     public function performFly(): string
     {
-        return $this->model->performFly();
+        return $this->duck->performFly();
     }
 
     /**
@@ -34,7 +39,7 @@ class ModelDuckService
      */
     public function performQuack(): string
     {
-        return $this->model->performQuack();
+        return $this->duck->performQuack();
     }
 
     /**
@@ -42,7 +47,7 @@ class ModelDuckService
      */
     public function display(): string
     {
-        return $this->model->display();
+        return $this->duck->display();
     }
 
     /**
@@ -50,6 +55,6 @@ class ModelDuckService
      */
     public function setFly(FlyInterface $flyBehavior): void
     {
-        $this->model->setFlyBehavior($flyBehavior);
+        $this->duck->setFlyBehavior($flyBehavior);
     }
 }

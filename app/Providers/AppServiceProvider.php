@@ -15,12 +15,42 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->bind(
             \App\Patterns\Strategy\Contracts\FlyInterface::class,
-            \App\Patterns\Strategy\MallardDuck::class
+            \App\Patterns\Strategy\Behavior\FlyNoWay::class
+        );
+
+        $this->app->bind(
+            \App\Patterns\Strategy\Contracts\FlyInterface::class,
+            \App\Patterns\Strategy\Behavior\FlyRockedPowered::class
+        );
+
+        $this->app->bind(
+            \App\Patterns\Strategy\Contracts\FlyInterface::class,
+            \App\Patterns\Strategy\Behavior\FlyWithWings::class
         );
 
         $this->app->bind(
             \App\Patterns\Strategy\Contracts\QuackInterface::class,
+            \App\Patterns\Strategy\Behavior\MuteQuack::class
+        );
+
+        $this->app->bind(
+            \App\Patterns\Strategy\Contracts\QuackInterface::class,
+            \App\Patterns\Strategy\Behavior\Quack::class
+        );
+
+        $this->app->bind(
+            \App\Patterns\Strategy\Contracts\QuackInterface::class,
+            \App\Patterns\Strategy\Behavior\Squeak::class
+        );
+
+        $this->app->bind(
+            \App\Patterns\Strategy\Duck::class,
             \App\Patterns\Strategy\MallardDuck::class
+        );
+
+        $this->app->bind(
+            \App\Patterns\Strategy\Duck::class,
+            \App\Patterns\Strategy\ModelDuck::class
         );
     }
 
