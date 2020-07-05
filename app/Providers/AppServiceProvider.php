@@ -22,11 +22,6 @@ class AppServiceProvider extends ServiceProvider
             \App\Patterns\Strategy\Contracts\QuackInterface::class,
             \App\Patterns\Strategy\MallardDuck::class
         );
-
-        $this->app->bind(
-            \App\Patterns\Strategy\MallardDuck::class,
-            \App\Patterns\Strategy\Services\MallardDuckService::class
-        );
     }
 
     /**
