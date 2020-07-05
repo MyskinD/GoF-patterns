@@ -17,49 +17,51 @@ use App\Patterns\Strategy\MallardDuck;
 use App\Patterns\Strategy\ModelDuck;
 use App\Patterns\Strategy\Services\MiniDuckService;
 use App\Patterns\Strategy\Services\ModelDuckService;
-use Illuminate\Http\Request;
 
 class StrategyController
 {
     /**
-     * @param Request $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function main(Request $request)
+    public function main()
     {
-        $data = $request->input('duck');
+        return view('strategy');
+    }
 
-        if (!$data) {
-//            return response()->make('Введите запрос с параметром duck', 400);
-//            return redirect()->to('strategy')->with(['errors' => 'Введите запрос с параметром duck']);
-        }
-
-        dd($data);
-
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function miniDuck()
+    {
         $miniDuckService = new MiniDuckService(new MallardDuck(new FlyWithWings(), new Quack()));
-        $displayMini = $miniDuckService->display();
-        $flyMini = $miniDuckService->performFly();
-        $quackMini = $miniDuckService->performQuack();
+        $display = $miniDuckService->display();
+        $fly = $miniDuckService->performFly();
+        $quack = $miniDuckService->performQuack();
 
+        return view('strategy.miniDuck', [
+            'display' => $display,
+            'quack' => $quack,
+            'fly' => $fly
+        ]);
+    }
+
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function modelDuck()
+    {
         $modelDuckService = new ModelDuckService(new ModelDuck(new FlyNoWay(), new Quack()));
-        $displayModel = $modelDuckService->display();
-        $quackModel = $modelDuckService->performQuack();
-        $flyModelBefore = $modelDuckService->performFly();
+        $display = $modelDuckService->display();
+        $quack = $modelDuckService->performQuack();
+        $flyBefore = $modelDuckService->performFly();
         $modelDuckService->setFly(new FlyRockedPowered());
-        $flyModelAfter = $modelDuckService->performFly();
+        $flyAfter = $modelDuckService->performFly();
 
-        return view('strategy', [
-            'miniDuck' => [
-                'displayMini' => $displayMini,
-                'flyMini' => $flyMini,
-                'quackMini' => $quackMini
-            ],
-            'modelDuck' => [
-                'displayModel' => $displayModel,
-                'quackModel' => $quackModel,
-                'flyModelBefore' => $flyModelBefore,
-                'flyModelAfter' => $flyModelAfter
-            ]
+        return view('strategy.modelDuck', [
+            'display' => $display,
+            'quack' => $quack,
+            'flyBefore' => $flyBefore,
+            'flyAfter' => $flyAfter
         ]);
     }
 }

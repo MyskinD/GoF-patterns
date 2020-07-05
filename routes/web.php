@@ -17,5 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/strategy', ['as' => 'strategy', 'uses' => 'StrategyController@main']);
+Route::group(['prefix' => 'strategy'], function()
+{
+    Route::match(['get'], '/', ['uses' => 'StrategyController@main', 'as' => 'strategy']);
+    Route::match(['get'], 'mini-duck', ['uses' => 'StrategyController@miniDuck', 'as' => 'miniDuck']);
+    Route::match(['get'], 'model-duck', ['uses' => 'StrategyController@modelDuck', 'as' => 'modelDuck']);
+
+});
 
