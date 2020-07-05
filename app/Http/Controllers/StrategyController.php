@@ -15,7 +15,7 @@ use App\Patterns\Strategy\Behavior\FlyWithWings;
 use App\Patterns\Strategy\Behavior\Quack;
 use App\Patterns\Strategy\MallardDuck;
 use App\Patterns\Strategy\ModelDuck;
-use App\Patterns\Strategy\Services\MiniDuckService;
+use App\Patterns\Strategy\Services\MallardDuckService;
 use App\Patterns\Strategy\Services\ModelDuckService;
 
 class StrategyController
@@ -31,14 +31,14 @@ class StrategyController
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function miniDuck()
+    public function mallardDuck()
     {
-        $miniDuckService = new MiniDuckService(new MallardDuck(new FlyWithWings(), new Quack()));
-        $display = $miniDuckService->display();
-        $fly = $miniDuckService->performFly();
-        $quack = $miniDuckService->performQuack();
+        $mallardDuckService = new MallardDuckService(new MallardDuck(new FlyWithWings(), new Quack()));
+        $display = $mallardDuckService->display();
+        $fly = $mallardDuckService->performFly();
+        $quack = $mallardDuckService->performQuack();
 
-        return view('strategy.miniDuck', [
+        return view('strategy.mallardDuck', [
             'display' => $display,
             'quack' => $quack,
             'fly' => $fly

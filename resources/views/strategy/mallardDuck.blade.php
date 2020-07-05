@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', 'Mini Duck')
+@section('title', 'Mallard Duck')
 
 @section('content')
     <p>{{ $display }}</p>

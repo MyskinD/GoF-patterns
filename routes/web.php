@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'strategy'], function()
 {
     Route::match(['get'], '/', ['uses' => 'StrategyController@main', 'as' => 'strategy']);
-    Route::match(['get'], 'mini-duck', ['uses' => 'StrategyController@miniDuck', 'as' => 'miniDuck']);
+    Route::match(['get'], 'mallard-duck', ['uses' => 'StrategyController@mallardDuck', 'as' => 'mallardDuck']);
     Route::match(['get'], 'model-duck', ['uses' => 'StrategyController@modelDuck', 'as' => 'modelDuck']);
 
 });

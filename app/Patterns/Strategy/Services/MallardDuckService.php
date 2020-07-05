@@ -11,13 +11,13 @@ namespace App\Patterns\Strategy\Services;
 
 use App\Patterns\Strategy\MallardDuck;
 
-class MiniDuckService
+class MallardDuckService
 {
     /** @var MallardDuck  */
     protected $mallard;
 
     /**
-     * MiniDuckService constructor.
+     * MallardDuckService constructor.
      * @param MallardDuck $mallardDuck
      */
     public function __construct(MallardDuck $mallardDuck)

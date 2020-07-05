@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind(
             \App\Patterns\Strategy\MallardDuck::class,
-            \App\Patterns\Strategy\Services\MiniDuckService::class
+            \App\Patterns\Strategy\Services\MallardDuckService::class
         );
     }
 
