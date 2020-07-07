@@ -32,7 +32,11 @@ class StrategyController
      */
     public function mallardDuck()
     {
-        $duckService = new DuckService(new MallardDuck(new FlyWithWings(), new Quack()));
+        $flyBehavior = new FlyWithWings();
+        $quackBehavior = new Quack();
+        $duck = new MallardDuck($flyBehavior, $quackBehavior);
+        $duckService = new DuckService($duck);
+
         $display = $duckService->display();
         $fly = $duckService->performFly();
         $quack = $duckService->performQuack();
@@ -49,11 +53,16 @@ class StrategyController
      */
     public function modelDuck()
     {
-        $duckService = new duckService(new ModelDuck(new FlyNoWay(), new Quack()));
+        $flyBehavior = new FlyNoWay();
+        $quackBehavior = new Quack();
+        $duck = new ModelDuck($flyBehavior, $quackBehavior);
+        $duckService = new DuckService($duck);
+
         $display = $duckService->display();
         $quack = $duckService->performQuack();
         $flyBefore = $duckService->performFly();
-        $duckService->setFly(new FlyRockedPowered());
+        $newFlyBehavior = new FlyRockedPowered();
+        $duckService->setFly($newFlyBehavior);
         $flyAfter = $duckService->performFly();
 
         return view('strategy.modelDuck', [
