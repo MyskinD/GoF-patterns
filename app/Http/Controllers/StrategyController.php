@@ -24,7 +24,7 @@ class StrategyController
      */
     public function main()
     {
-        return view('strategy');
+        return view('behavioral.strategy');
     }
 
     /**
@@ -41,7 +41,7 @@ class StrategyController
         $fly = $duckService->performFly();
         $quack = $duckService->performQuack();
 
-        return view('strategy.mallardDuck', [
+        return view('behavioral.strategy.mallardDuck', [
             'display' => $display,
             'quack' => $quack,
             'fly' => $fly
@@ -65,7 +65,7 @@ class StrategyController
         $duckService->setFly($newFlyBehavior);
         $flyAfter = $duckService->performFly();
 
-        return view('strategy.modelDuck', [
+        return view('behavioral.strategy.modelDuck', [
             'display' => $display,
             'quack' => $quack,
             'flyBefore' => $flyBefore,

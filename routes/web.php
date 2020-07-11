@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('generating', function () {
+    return view('generating');
+});
+
+Route::get('structural', function () {
+    return view('structural');
+});
+
+Route::get('behavioral', function () {
+    return view('behavioral');
+});
+
 Route::group(['prefix' => 'strategy'], function()
 {
     Route::match(['get'], '/', ['uses' => 'StrategyController@main', 'as' => 'strategy']);
