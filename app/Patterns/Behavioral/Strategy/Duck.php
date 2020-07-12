@@ -6,11 +6,11 @@
  * Time: 10:37
  */
 
-namespace App\Patterns\Strategy;
+namespace App\Patterns\Behavioral\Strategy;
 
 
-use App\Patterns\Strategy\Contracts\FlyInterface;
-use App\Patterns\Strategy\Contracts\QuackInterface;
+use App\Patterns\Behavioral\Strategy\Contracts\FlyInterface;
+use App\Patterns\Behavioral\Strategy\Contracts\QuackInterface;
 
 abstract class Duck
 {

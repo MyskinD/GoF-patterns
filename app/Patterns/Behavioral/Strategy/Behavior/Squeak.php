@@ -6,10 +6,10 @@
  * Time: 21:46
  */
 
-namespace App\Patterns\Strategy\Behavior;
+namespace App\Patterns\Behavioral\Strategy\Behavior;
 
 
-use App\Patterns\Strategy\Contracts\QuackInterface;
+use App\Patterns\Behavioral\Strategy\Contracts\QuackInterface;
 
 class Squeak implements QuackInterface
 {

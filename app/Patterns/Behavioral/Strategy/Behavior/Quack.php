@@ -6,10 +6,10 @@
  * Time: 21:42
  */
 
-namespace App\Patterns\Strategy\Behavior;
+namespace App\Patterns\Behavioral\Strategy\Behavior;
 
 
-use App\Patterns\Strategy\Contracts\QuackInterface;
+use App\Patterns\Behavioral\Strategy\Contracts\QuackInterface;
 
 class Quack implements QuackInterface
 {

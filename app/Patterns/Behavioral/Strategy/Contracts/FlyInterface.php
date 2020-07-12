@@ -6,7 +6,7 @@
  * Time: 10:39
  */
 
-namespace App\Patterns\Strategy\Contracts;
+namespace App\Patterns\Behavioral\Strategy\Contracts;
 
 
 interface FlyInterface

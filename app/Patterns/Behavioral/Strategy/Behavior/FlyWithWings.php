@@ -6,10 +6,10 @@
  * Time: 21:06
  */
 
-namespace App\Patterns\Strategy\Behavior;
+namespace App\Patterns\Behavioral\Strategy\Behavior;
 
 
-use App\Patterns\Strategy\Contracts\FlyInterface;
+use App\Patterns\Behavioral\Strategy\Contracts\FlyInterface;
 
 class FlyWithWings implements FlyInterface
 {

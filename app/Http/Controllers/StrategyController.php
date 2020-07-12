@@ -9,13 +9,13 @@
 namespace App\Http\Controllers;
 
 
-use App\Patterns\Strategy\Behavior\FlyNoWay;
-use App\Patterns\Strategy\Behavior\FlyRockedPowered;
-use App\Patterns\Strategy\Behavior\FlyWithWings;
-use App\Patterns\Strategy\Behavior\Quack;
-use App\Patterns\Strategy\MallardDuck;
-use App\Patterns\Strategy\ModelDuck;
-use App\Patterns\Strategy\Services\DuckService;
+use App\Patterns\Behavioral\Strategy\Behavior\FlyNoWay;
+use App\Patterns\Behavioral\Strategy\Behavior\FlyRockedPowered;
+use App\Patterns\Behavioral\Strategy\Behavior\FlyWithWings;
+use App\Patterns\Behavioral\Strategy\Behavior\Quack;
+use App\Patterns\Behavioral\Strategy\MallardDuck;
+use App\Patterns\Behavioral\Strategy\ModelDuck;
+use App\Patterns\Behavioral\Strategy\Services\DuckService;
 
 class StrategyController
 {

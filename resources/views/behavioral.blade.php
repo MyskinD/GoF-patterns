@@ -9,7 +9,7 @@
         <a href="#" style="color: red; cursor: text;">Iterator</a>
         <a href="#" style="color: red; cursor: text;">Mediator</a>
         <a href="#" style="color: red; cursor: text;">Memento</a>
-        <a href="#">Observer</a>
+        <a href="{{ route('observer') }}">Observer</a>
         <a href="#" style="color: red; cursor: text;">State</a>
         <a href="{{ route('strategy') }}">Strategy</a>
         <a href="#" style="color: red; cursor: text;">Template Method</a>

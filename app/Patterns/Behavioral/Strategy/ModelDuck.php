@@ -3,19 +3,19 @@
  * Created by PhpStorm.
  * User: MyskinD
  * Date: 05.07.20
- * Time: 0:10
+ * Time: 1:18
  */
 
-namespace App\Patterns\Strategy;
+namespace App\Patterns\Behavioral\Strategy;
 
 
-use App\Patterns\Strategy\Contracts\FlyInterface;
-use App\Patterns\Strategy\Contracts\QuackInterface;
+use App\Patterns\Behavioral\Strategy\Contracts\FlyInterface;
+use App\Patterns\Behavioral\Strategy\Contracts\QuackInterface;
 
-class MallardDuck extends Duck
+class ModelDuck extends Duck
 {
     /**
-     * MallardDuck constructor.
+     * ModelDuck constructor.
      * @param FlyInterface $flyBehavior
      * @param QuackInterface $quackBehavior
      */
@@ -29,6 +29,6 @@ class MallardDuck extends Duck
      */
     public function display(): string
     {
-        return 'I\'m a real Mallard duck';
+        return 'I\'m a model duck';
     }
 }

@@ -29,11 +29,13 @@ Route::get('behavioral', function () {
     return view('behavioral');
 });
 
-Route::group(['prefix' => 'strategy'], function()
-{
-    Route::match(['get'], '/', ['uses' => 'StrategyController@main', 'as' => 'strategy']);
-    Route::match(['get'], 'mallard-duck', ['uses' => 'StrategyController@mallardDuck', 'as' => 'mallardDuck']);
-    Route::match(['get'], 'model-duck', ['uses' => 'StrategyController@modelDuck', 'as' => 'modelDuck']);
-
+Route::group(['prefix' => 'behavioral'], function(){
+    Route::group(['prefix' => 'strategy'], function() {
+        Route::get('/', ['uses' => 'StrategyController@main', 'as' => 'strategy']);
+        Route::get('mallard-duck', ['uses' => 'StrategyController@mallardDuck', 'as' => 'mallardDuck']);
+        Route::get('model-duck', ['uses' => 'StrategyController@modelDuck', 'as' => 'modelDuck']);
+    });
+    Route::group(['prefix' => 'observer'], function () {
+        Route::get('/', ['uses' => 'ObserverController@main', 'as' => 'observer']);
+    });
 });
-

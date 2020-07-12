@@ -6,11 +6,11 @@
  * Time: 22:02
  */
 
-namespace App\Patterns\Strategy\Services;
+namespace App\Patterns\Behavioral\Strategy\Services;
 
 
-use App\Patterns\Strategy\Contracts\FlyInterface;
-use App\Patterns\Strategy\Duck;
+use App\Patterns\Behavioral\Strategy\Contracts\FlyInterface;
+use App\Patterns\Behavioral\Strategy\Duck;
 
 class DuckService
 {

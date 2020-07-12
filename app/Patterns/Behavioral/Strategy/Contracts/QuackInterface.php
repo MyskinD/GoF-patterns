@@ -6,7 +6,7 @@
  * Time: 10:43
  */
 
-namespace App\Patterns\Strategy\Contracts;
+namespace App\Patterns\Behavioral\Strategy\Contracts;
 
 
 interface QuackInterface
